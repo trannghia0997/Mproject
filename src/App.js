@@ -34,8 +34,10 @@ const App = (props) => {
                     <Route path="/event/edit/:id" element={<EventEdit />}/>
                     <Route path="/event/add" element={<EventAdd />}/>
 
-
-                    <Route path="/interview" element={<Interview />} />
+                    <Route path="/interview" element={<InterviewMain />} />
+                    <Route path="/interview/detail/:id" element={<InterviewDetail />} />
+                    <Route path="/interview/detail/:id/:mark_id" element={<InterviewMark />} />
+                    <Route path="/questions" element={<Questions />} />
 
 
                     <Route path="/recruitment" element={<Recruitment />} />
