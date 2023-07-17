@@ -13,7 +13,7 @@ const EventDetail = () => {
     return (
         <div>
             <div className="flex w-full justify-between absolute right-[1px] mt-[-70px] bg-white h-16 rounded-xl items-center">
-                <div className="mx-10 font-serif text-xl text">
+                <div className="mx-10 font-sans text-xl text">
                     Chi Tiết Sự Kiện
                 </div>
                 <button onClick={handleCancelClick} className=" text-sky-700 mx-10">Back</button>
@@ -84,7 +84,7 @@ const EventDetail = () => {
                                         ) {
                                             return (
                                                 <img
-                                                    alt="aaa"
+                                                    alt="SimpleImage"
                                                     className="rounded-2xl border-[1px] w-full border-slate-300 justify-self-center "
                                                     src={block.data.url}
                                                 ></img>

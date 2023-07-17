@@ -1,7 +1,8 @@
 import React from "react"
 import DynamicFormItem from "./DynamicFormItem"
 import { Button, Form, Input, Row, Col, Breadcrumb } from "antd"
-import { useNavigate } from "react-router-dom"
+import { useNavigate, useParams } from "react-router-dom"
+import recruits from "./../../data/recruit"
 
 const formItemLayoutWithOutLabel = {
     wrapperCol: {
@@ -12,20 +13,22 @@ const formItemLayoutWithOutLabel = {
     },
 }
 
-const RecruitAdd = () => {
+const RecruitEdit = () => {
     const onFinish = (values) => {
         console.log(values)
     }
+    const { id } = useParams()
     const navigate = useNavigate()
     const handleCancelClick = () => {
         navigate("/recruitment", { replace: true })
     }
+    const recruit = recruits[parseInt(id)]
 
     return (
         <div className="">
             <div className="flex w-full absolute right-[1px] mt-[-85px] bg-white h-16 rounded-xl items-center justify-between">
                 <div className="ml-10 font-serif text-xl text">
-                    Thêm Bài Tuyển Dụng
+                    Chỉnh sửa bài tuyển dụng
                 </div>
                 <button
                     onClick={handleCancelClick}
@@ -67,48 +70,90 @@ const RecruitAdd = () => {
                     <Row gutter={[16, 16]}>
                         <Col xs={24} sm={24} md={12} lg={12}>
                             <Form.Item label="Name">
-                                <Input className="w-full" />
+                                <Input
+                                    className="w-full"
+                                    defaultValue={recruit.name}
+                                />
                             </Form.Item>
                             <Form.Item label="Position">
-                                <Input className="w-full" />
+                                <Input
+                                    className="w-full"
+                                    defaultValue={recruit.position}
+                                />
                             </Form.Item>
                             <Form.Item label="Language">
-                                <Input className="w-full" />
+                                <Input
+                                    className="w-full"
+                                    defaultValue={recruit.language}
+                                />
                             </Form.Item>
                             <Form.Item label="City">
-                                <Input className="w-full" />
+                                <Input
+                                    className="w-full"
+                                    defaultValue={recruit.location}
+                                />
                             </Form.Item>
                             <Form.Item label="Salary">
-                                <Input className="w-full" />
+                                <Input
+                                    className="w-full"
+                                    defaultValue={recruit.salary}
+                                />
                             </Form.Item>
                         </Col>
                         <Col xs={24} sm={24} md={12} lg={12}>
                             <Form.Item label="Quantity">
-                                <Input className="w-full" />
+                                <Input
+                                    className="w-full"
+                                    defaultValue={recruit.number}
+                                />
                             </Form.Item>
                             <Form.Item label="Enrollment">
-                                <Input className="w-full" />
+                                <Input
+                                    className="w-full"
+                                    defaultValue={recruit.workingform}
+                                />
                             </Form.Item>
                             <Form.Item label="Sex">
-                                <Input className="w-full" />
+                                <Input
+                                    className="w-full"
+                                    defaultValue={recruit.sex}
+                                />
                             </Form.Item>
                             <Form.Item label="Experience">
-                                <Input className="w-full" />
+                                <Input
+                                    className="w-full"
+                                    defaultValue={recruit.experience}
+                                />
                             </Form.Item>
                             <Form.Item label="Location">
-                                <Input className="w-full" />
+                                <Input
+                                    className="w-full"
+                                    defaultValue={recruit.detaillocation}
+                                />
                             </Form.Item>
                         </Col>
                     </Row>
-                    <DynamicFormItem name="detailJob" label="Job Details" />
-                    <DynamicFormItem name="requirements" label="Requirements" />
-                    <DynamicFormItem name="interest" label="Interests" />
+                    <DynamicFormItem
+                        initialValue={recruit.detailjob}
+                        name="detailJob"
+                        label="Job Details"
+                    />
+                    <DynamicFormItem
+                        name="requirements"
+                        label="Requirements"
+                        initialValue={recruit.requirements}
+                    />
+                    <DynamicFormItem
+                        name="interest"
+                        label="Interests"
+                        initialValue={recruit.interest}
+                    />
                 </div>
                 <Form.Item className="">
                     <div className="flex my-10 w-full justify-end gap-10 ml-14">
                         <button className="hover:scale-110 w-28 shadow-xl relative rounded px-5 py-2.5 overflow-hidden group bg-green-500 hover:bg-gradient-to-r hover:from-green-500 hover:to-green-400 text-white hover:ring-2 hover:ring-offset-2 hover:ring-green-400 transition-all ease-out duration-300">
                             <span className="absolute right-0 w-8 h-32 -mt-12 transition-all duration-1000 transform translate-x-12 bg-white opacity-10 rotate-12 group-hover:-translate-x-40 ease"></span>
-                            <span className="relative">Add</span>
+                            <span className="relative">Update</span>
                         </button>
                         <button
                             onClick={handleCancelClick}
@@ -123,4 +168,4 @@ const RecruitAdd = () => {
     )
 }
 
-export default RecruitAdd
+export default RecruitEdit

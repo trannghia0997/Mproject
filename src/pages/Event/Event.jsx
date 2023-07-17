@@ -10,7 +10,7 @@ const Event = ({ collapsed }) => {
     return (
         <div className="">
             <div className="flex w-full absolute right-[1px] mt-[-70px] bg-white h-16 rounded-xl items-center">
-                <div className="ml-10 font-serif text-xl text">EVENT</div>
+                <div className="ml-10 font-serif text-xl text">Sự Kiện</div>
             </div>
             <div className={`flex flex-col h-full w-full`}>
                 <DataCard/>

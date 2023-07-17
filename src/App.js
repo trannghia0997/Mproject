@@ -11,6 +11,7 @@ import EventDetail from "./pages/Event/children/EventDetail"
 
 import RecruitAdd from "./pages/Recruitment/RecruitAdd"
 import Recruitment from "./pages/Recruitment/Recruitment"
+import RecruitEdit from "./pages/Recruitment/RecruitEdit"
 
 
 const App = (props) => {
@@ -29,7 +30,7 @@ const App = (props) => {
 
                     <Route path="/recruitment" element={<Recruitment />} />
                     <Route path="/recruitment/add" element={<RecruitAdd />} />
-
+                    <Route path="/recruitment/edit/:id" element={<RecruitEdit />} />
 
                 </Routes>
                 </IRALayout>

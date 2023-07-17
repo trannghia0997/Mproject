@@ -14,6 +14,7 @@ import IRAHeader from "../components/IRALayout/IRAHeader"
 import IRASidebar from "../components/IRALayout/IRASidebar"
 import IRAHero from "../components/IRALayout/IRAHero"
 import IRABanner from "../components/IRALayout/IRABanner"
+import IRAFooter from "../components/IRALayout/IRAFooter"
 
 const items = [
     { key: "/", icon: <HomeOutlined />, label: "Home" },
@@ -49,7 +50,6 @@ const IRALayout = ({ collapsed, SetCollapsed, children }) => {
                 <IRAHeader colorBgContainer={colorBgContainer} />
                 <IRAHero />
                 <IRAContent>{children}</IRAContent>
-
             </Layout>
         </Layout>
     )

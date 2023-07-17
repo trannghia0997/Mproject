@@ -1,16 +1,15 @@
 import { createReactEditorJS } from "react-editor-js"
-import React, { useCallback, useRef } from "react"
+import React, { useCallback } from "react"
 import { EDITOR_JS_TOOLS } from "./../constants/tool"
-import { FloatButton } from "antd"
 import { mapDispatchToProps, mapStateToProps } from "./rdSidebar"
 import { connect } from "react-redux"
 
 const RichEditor = ({ editorCore, value }) => {
     const ReactEditorJS = createReactEditorJS()
-
+    
     const handleInitialize = useCallback((instance) => {
         editorCore.current = instance
-    }, [])
+    }, [editorCore])
 
     return (
         <div>

@@ -1,6 +1,7 @@
 import React from "react"
 import { Link } from "react-router-dom"
 import DataCard from "../../components/DataCard"
+import recruits from "./../../data/recruit"
 
 import {
     EnvironmentTwoTone,
@@ -14,7 +15,7 @@ const Recruitment = () => {
         <div>
             {" "}
             <div className="flex w-full absolute right-[1px] mt-[-70px] bg-white h-16 rounded-xl items-center">
-                <div className="ml-10 font-serif text-xl text">Recruitment</div>
+                <div className="ml-10 font-serif text-xl text">Tuyển dụng</div>
             </div>
             <div className="flex flex-col h-full w-full">
                 <DataCard />
@@ -55,141 +56,55 @@ const Recruitment = () => {
                     </Link>
                 </div>
                 <div className="grid grid-cols-2 gap-y-8 gap-x-4 ">
-                    <div className="flex w-full h-36 bg-white rounded-xl shadow-xl hover:scale-105 transition-all ease-in-out duration-200">
-                        <div className="flex justify-center w-2/5">
-                            <div className="justify-center p-8 items-center bg-center bg-contain cursor-pointer">
-                                <img
-                                    alt="cava"
-                                    className="w-full h-full object-cover"
-                                    src="https://logowik.com/content/uploads/images/react7473.logowik.com.webp"
-                                ></img>
+                    {recruits.map((recruit) => (
+                        <div className="flex w-full h-36 bg-white rounded-xl shadow-xl hover:scale-105 transition-all ease-in-out duration-200">
+                            <div className="flex justify-center w-2/5">
+                        
+                                <div className="justify-center p-8 items-center bg-center bg-contain cursor-pointer">
+                                    <img
+                                        alt="cava"
+                                        className="w-full h-full object-cover"
+                                        src="https://logowik.com/content/uploads/images/react7473.logowik.com.webp"
+                                    ></img>
+                                </div>
+                            </div>
+                            <div className="flex w-full">
+                                <div className="flex flex-col w-full p-3">
+                                    <div className="flex text-lg font-sans cursor-pointer w-fit font-medium ">
+                                        {recruit.name}
+                                    </div>
+                                    <div className="flex text-sm my-1 ">
+                                        Position: {recruit.position}
+                                    </div>
+                                    <div className="flex  text-sm">
+                                        Language: {recruit.language}
+                                    </div>
+                                    <div className="flex my-3 text-sm text-lime-600 font-mono font-medium">
+                                        <EnvironmentTwoTone
+                                            twoToneColor="#52c41a"
+                                            className="mx-1"
+                                        />{" "}
+                                        {recruit.location}
+                                    </div>
+                                </div>
+                                <div className="flex w-5/12 my-5 font-mono font-bold text-lime-700">
+                                    {recruit.salary}
+                                </div>
+                            </div>
+                            <div className="flex flex-col w-2/12 ">
+                                <Link to={`edit/${recruit.id}`} className="flex justify-center text-xl h-1/3" >
+                                    <EditOutlined />
+                                </Link>
+                                <div className="flex justify-center text-xl h-1/3">
+                                    <EnterOutlined />
+                                </div>
+                                <div className="flex justify-center text-xl h-1/3">
+                                    <StopOutlined />
+                                </div>
                             </div>
                         </div>
-                        <div className="flex w-full">
-                            <div className="flex flex-col w-full p-3">
-                                <div className="flex text-lg font-sans cursor-pointer w-fit font-medium ">
-                                    Nhân viên kinh doanh
-                                </div>
-                                <div className="flex text-sm my-1 ">
-                                    Position: Intern
-                                </div>
-                                <div className="flex  text-sm">
-                                    Language: ReactJS
-                                </div>
-                                <div className="flex my-3 text-sm text-lime-600 font-mono font-medium">
-                                    <EnvironmentTwoTone
-                                        twoToneColor="#52c41a"
-                                        className="mx-1"
-                                    />{" "}
-                                    Hồ Chí Minh
-                                </div>
-                            </div>
-                            <div className="flex w-5/12 my-5 font-mono font-bold text-lime-700">
-                                3tr-5tr
-                            </div>
-                        </div>
-                        <div className="flex flex-col w-2/12 ">
-                            <div className="flex justify-center text-xl h-1/3">
-                                <EditOutlined />
-                            </div>
-                            <div className="flex justify-center text-xl h-1/3">
-                                <EnterOutlined />
-                            </div>
-                            <div className="flex justify-center text-xl h-1/3">
-                                <StopOutlined />
-                            </div>
-                        </div>
-                    </div>
-                    <div className="flex w-full h-36 bg-white rounded-xl shadow-xl hover:scale-105 transition-all ease-in-out duration-200">
-                        <div className="flex justify-center w-2/5">
-                            <div className="justify-center p-8 items-center bg-center bg-contain cursor-pointer">
-                                <img
-                                    alt="cava"
-                                    className="w-full h-full object-cover"
-                                    src="https://logowik.com/content/uploads/images/react7473.logowik.com.webp"
-                                ></img>
-                            </div>
-                        </div>
-                        <div className="flex w-full">
-                            <div className="flex flex-col w-full p-3">
-                                <div className="flex text-lg font-sans cursor-pointer w-fit font-medium ">
-                                    Nhân viên kinh doanh
-                                </div>
-                                <div className="flex text-sm my-1 ">
-                                    Position: Intern
-                                </div>
-                                <div className="flex  text-sm">
-                                    Language: ReactJS
-                                </div>
-                                <div className="flex my-3 text-sm text-lime-600 font-mono font-medium">
-                                    <EnvironmentTwoTone
-                                        twoToneColor="#52c41a"
-                                        className="mx-1"
-                                    />{" "}
-                                    Hồ Chí Minh
-                                </div>
-                            </div>
-                            <div className="flex w-5/12 my-5 font-mono font-bold text-lime-700">
-                                3tr-5tr
-                            </div>
-                        </div>
-                        <div className="flex flex-col w-2/12 ">
-                            <div className="flex justify-center text-xl h-1/3">
-                                <EditOutlined />
-                            </div>
-                            <div className="flex justify-center text-xl h-1/3">
-                                <EnterOutlined />
-                            </div>
-                            <div className="flex justify-center text-xl h-1/3">
-                                <StopOutlined />
-                            </div>
-                        </div>
-                    </div>
-                    <div className="flex w-full h-36 bg-white rounded-xl shadow-xl hover:scale-105 transition-all ease-in-out duration-200">
-                        <div className="flex justify-center w-2/5">
-                            <div className="justify-center p-8 items-center bg-center bg-contain cursor-pointer">
-                                <img
-                                    alt="cava"
-                                    className="w-full h-full object-cover"
-                                    src="https://logowik.com/content/uploads/images/react7473.logowik.com.webp"
-                                ></img>
-                            </div>
-                        </div>
-                        <div className="flex w-full">
-                            <div className="flex flex-col w-full p-3">
-                                <div className="flex text-lg font-sans cursor-pointer w-fit font-medium ">
-                                    Nhân viên kinh doanh
-                                </div>
-                                <div className="flex text-sm my-1 ">
-                                    Position: Intern
-                                </div>
-                                <div className="flex  text-sm">
-                                    Language: ReactJS
-                                </div>
-                                <div className="flex my-3 text-sm text-lime-600 font-mono font-medium">
-                                    <EnvironmentTwoTone
-                                        twoToneColor="#52c41a"
-                                        className="mx-1"
-                                    />{" "}
-                                    Hồ Chí Minh
-                                </div>
-                            </div>
-                            <div className="flex w-5/12 my-5 font-mono font-bold text-lime-700">
-                                3tr-5tr
-                            </div>
-                        </div>
-                        <div className="flex flex-col w-2/12 ">
-                            <div className="flex justify-center text-xl h-1/3">
-                                <EditOutlined />
-                            </div>
-                            <div className="flex justify-center text-xl h-1/3">
-                                <EnterOutlined />
-                            </div>
-                            <div className="flex justify-center text-xl h-1/3">
-                                <StopOutlined />
-                            </div>
-                        </div>
-                    </div>
+                    ))}
+                    
                 </div>
             </div>
         </div>
