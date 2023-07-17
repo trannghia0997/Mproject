@@ -29,24 +29,17 @@ const App = (props) => {
                     <Route path="/event/:id" element={<EventDetail />} />
                     <Route path="/event/edit/:id" element={<EventEdit />} />
                     <Route path="/event/add" element={<EventAdd />} />
-
-
                     <Route path="/interview" element={<Interview />} />
-
-
                     <Route path="/recruitment" element={<Recruitment />} />
                     <Route path="/recruitment/add" element={<RecruitAdd />} />
-<<<<<<< HEAD
                     <Route path="/recruitment/edit/:id" element={<RecruitEdit />} />
-=======
-
                     <Route path='manage-user' element={<ManageUser />} />
                     <Route path='detail-user/:id' element={<DetailUser />} />
                     <Route path='manage-candidate' element={< ManageCandidate />} />
                     <Route path="blacklist" element={< BlackList />} />
                     <Route path="reason-blacklist/:id" element={< ReasonBlacklist />} />
 
->>>>>>> origin/Admin-Hung
+
 
                 </Routes>
             </IRALayout>
