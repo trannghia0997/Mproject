@@ -3,7 +3,6 @@ import "./App.css"
 import React from "react"
 import "./style.css"
 import Event from "./pages/Event/Event"
-import Interview from "./pages/Interview/Interview"
 import IRALayout from "./layout/IRALayout"
 import EventEdit from "./pages/Event/children/EventEdit"
 import EventAdd from "./pages/Event/children/EventAdd"
@@ -11,6 +10,10 @@ import EventDetail from "./pages/Event/children/EventDetail"
 
 import RecruitAdd from "./pages/Recruitment/RecruitAdd"
 import Recruitment from "./pages/Recruitment/Recruitment"
+import InterviewMain from "./pages/Interview/InterviewMain/InterviewMain"
+import InterviewDetail from "./pages/Interview/InterviewDetail/InterviewDetail"
+import InterviewMark from "./pages/Interview/InterviewMark/InterviewMark"
+import Questions from "./pages/Interview/Questions/Questions"
 import RecruitEdit from "./pages/Recruitment/RecruitEdit"
 
 import ManageUser from './pages/Manage-user/Manage-user'
@@ -20,16 +23,21 @@ import BlackList from './pages/Blacklist/Blacklist'
 import ReasonBlacklist from './pages/ReasonBlacklist/ReasonBlacklist'
 
 
+
 const App = (props) => {
     return (
-        <Router>
-            <IRALayout>
-                <Routes>
-                    <Route path="/event" element={<Event />} />
-                    <Route path="/event/:id" element={<EventDetail />} />
-                    <Route path="/event/edit/:id" element={<EventEdit />} />
-                    <Route path="/event/add" element={<EventAdd />} />
+            <Router>
+                <IRALayout>
+                <Routes>                    
+                    <Route path="/event" element={<Event />}/>
+                    <Route path="/event/:id" element={<EventDetail />}/>
+                    <Route path="/event/edit/:id" element={<EventEdit />}/>
+                    <Route path="/event/add" element={<EventAdd />}/>
+
+
                     <Route path="/interview" element={<Interview />} />
+
+
                     <Route path="/recruitment" element={<Recruitment />} />
                     <Route path="/recruitment/add" element={<RecruitAdd />} />
                     <Route path="/recruitment/edit/:id" element={<RecruitEdit />} />
