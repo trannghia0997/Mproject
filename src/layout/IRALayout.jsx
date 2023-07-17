@@ -6,6 +6,7 @@ import {
     HomeOutlined,
     FireOutlined,
     FileSearchOutlined,
+    QuestionCircleOutlined
 } from "@ant-design/icons"
 import { Layout, theme } from "antd"
 import { useNavigate } from "react-router-dom"
@@ -18,9 +19,13 @@ import IRABanner from "../components/IRALayout/IRABanner"
 const items = [
     { key: "/", icon: <HomeOutlined />, label: "Home" },
     { type: "divider" },
-    { key: "/event", icon: <FireOutlined />, label: "Event" },
-    { key: "/interview", icon: <VideoCameraOutlined />, label: "Interview" },
-    { key: "/recruitment", icon: <FileSearchOutlined />, label: "Recruitment" },
+    // { key: "/event", icon: <FireOutlined />, label: "Event" },
+    // { key: "/interview", icon: <VideoCameraOutlined />, label: "Interview" },
+    // { key: "/recruitment", icon: <FileSearchOutlined />, label: "Recruitment" },
+
+    // Interview
+    { key: "/interview", icon: <VideoCameraOutlined />, label: "Buổi phỏng vấn" },
+    { key: "/questions", icon: <QuestionCircleOutlined />, label: "Bộ câu hỏi" }
 ]
 const IRALayout = ({ collapsed, SetCollapsed, children }) => {
     const {
