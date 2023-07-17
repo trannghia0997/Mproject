@@ -5,18 +5,11 @@ import { FloatButton } from "antd"
 import { mapDispatchToProps, mapStateToProps } from "./rdSidebar"
 import { connect } from "react-redux"
 
-const RichEditor = ({ SetContent, value }) => {
+const RichEditor = ({ editorCore, value }) => {
     const ReactEditorJS = createReactEditorJS()
-    const editorCore = useRef(null)
 
     const handleInitialize = useCallback((instance) => {
         editorCore.current = instance
-    }, [])
-
-    const handleSave = useCallback(async () => {
-        const content = await editorCore.current.save()
-        SetContent(content)
-        console.log()
     }, [])
 
     return (
@@ -27,11 +20,6 @@ const RichEditor = ({ SetContent, value }) => {
                 tools={EDITOR_JS_TOOLS}
                 defaultValue={value}
             />{" "}
-            <FloatButton
-                onClick={() => {
-                    handleSave()
-                }}
-            />
         </div>
     )
 }
