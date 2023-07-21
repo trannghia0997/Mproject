@@ -4,7 +4,7 @@ import './style.scss'
 import { Link } from 'react-router-dom';
 import { Typography, Space, Card, Button, Pagination } from "antd"
 
-const Table = () => {
+const TableInterviewer = () => {
   const [tableData, setTableData] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [currentPerson, setCurrentPerson] = useState();
@@ -61,13 +61,13 @@ const Table = () => {
         ))}
       </div>
       <div>
-      <div className='pagination' style={{marginTop:'20px',justifyContent:'center'}}>
-            <Pagination
-                current={currentPage}
-                total={tableData.length}
-                pageSize={itemsPerPage}
-                onChange={handlePageChange}
-            />
+        <div className='pagination' style={{ marginTop: '20px', justifyContent: 'center' }}>
+          <Pagination
+            current={currentPage}
+            total={tableData.length}
+            pageSize={itemsPerPage}
+            onChange={handlePageChange}
+          />
         </div>
       </div>
       {/* {viewInfo && currentPerson && (
@@ -87,4 +87,4 @@ const Table = () => {
   )
 }
 
-export default Table;
+export default TableInterviewer;

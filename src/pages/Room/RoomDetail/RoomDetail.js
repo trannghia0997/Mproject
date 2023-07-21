@@ -12,7 +12,7 @@ const RoomDetail = () => {
   ))
   
   return (
-    <div className='home'>
+    <div className='RoomEdit-home'>
             <div className='top-main'>
                 <h1>Hello Devs</h1>
             </div>
