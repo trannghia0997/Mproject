@@ -14,9 +14,13 @@ const formItemLayout = {
 }
 
 const formItemLayoutWithOutLabel = {
+    labelCol: {
+        xs: { span: 24 },
+        sm: { span: 4 },
+    },
     wrapperCol: {
-        xs: { span: 24, offset: 0 },
-        sm: { span: 20, offset: 4 },
+        xs: { span: 24 },
+        sm: { span: 20 },
     },
 }
 
@@ -42,12 +46,10 @@ const DynamicFormItem = ({ name, label, initialValue }) => {
             >
                 {(fields, { add, remove }, { errors }) => (
                     <div className="flex">
-                        <div className="w-2/3">
+                        <div className="w-full">
                             {fields.map((field, index) => (
                                 <Form.Item
-                                    {...(index === 0
-                                        ? formItemLayout
-                                        : formItemLayoutWithOutLabel)}
+                   
                                     label={index === 0 ? label : ""}
                                     required={false}
                                     key={field.key}
@@ -67,18 +69,17 @@ const DynamicFormItem = ({ name, label, initialValue }) => {
                                         ]}
                                         noStyle
                                     >
-                                        <Input className="w-11/12 mx-2" />
+                                        <Input className="w-11/12" size="large" />
                                     </Form.Item>
                                     {fields.length > 1 ? (
                                         <MinusCircleOutlined
-                                            className="dynamic-delete-button"
+                                            className="dynamic-delete-button mx-2"
                                             onClick={() => remove(field.name)}
                                         />
                                     ) : null}
                                 </Form.Item>
                             ))}
-                        </div>
-                        <Form.Item>
+                                        <Form.Item>
                             <Button
                                 type="dashed"
                                 onClick={() => add()}
@@ -88,6 +89,8 @@ const DynamicFormItem = ({ name, label, initialValue }) => {
                             </Button>
                             <Form.ErrorList errors={errors} />
                         </Form.Item>
+                        </div>
+            
                     </div>
                 )}
             </Form.List>

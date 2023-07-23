@@ -2,7 +2,12 @@ import React from "react"
 import { connect } from "react-redux"
 import { mapDispatchToProps, mapStateToProps } from "../../components/rdSidebar"
 import { Link } from "react-router-dom"
-import { EditOutlined, StopOutlined, EnterOutlined } from "@ant-design/icons"
+import {
+    EditOutlined,
+    StopOutlined,
+    EnterOutlined,
+    UserOutlined,
+} from "@ant-design/icons"
 import events from "./../../data/event"
 import DataCard from "../../components/DataCard"
 
@@ -13,8 +18,7 @@ const Event = ({ collapsed }) => {
                 <div className="ml-10 font-serif text-xl text">Sự Kiện</div>
             </div>
             <div className={`flex flex-col h-full w-full`}>
-                <DataCard/>
-          
+                <DataCard />
 
                 <div className="flex justify-between my-8">
                     <div className="flex max-w-lg w-96 items-center justify-center">
@@ -54,12 +58,12 @@ const Event = ({ collapsed }) => {
                 </div>
                 <div className="grid xl:grid-cols-3 md:grid-cols-2 gap-y-8 gap-x-12">
                     {events.map((event) => (
-                        <div className="transition-all ease-out hover:scale-105 w-full flex flex-col bg-white shadow-xl rounded-t-2xl">
+                        <div className="transition-all ease-out hover:scale-105 w-full flex flex-col bg-white shadow-xl rounded-md">
                             <Link className="mb-2" to={`${event.id}`}>
                                 <div className="justify-center cursor-pointer">
                                     <img
                                         alt="banner"
-                                        className="w-full h-[200px] object-cover rounded-t-2xl"
+                                        className="w-full h-[200px] object-cover rounded-t-md"
                                         src={event.image}
                                     ></img>
                                 </div>
@@ -68,7 +72,10 @@ const Event = ({ collapsed }) => {
                                 <div className="flex flex-col mx-4">
                                     <div className="font-medium text-slate-400 flex justify-between pt-4">
                                         <div>{event.time}</div>
-                                        <div>{event.author}</div>
+                                        <div className="flex gap-1 items-center justify-center">
+                                            <UserOutlined />
+                                            <div>{event.author}</div>
+                                        </div>
                                     </div>
                                     <div className=" pt-2 font-mono font-semibold text-2xl">
                                         {event.name}

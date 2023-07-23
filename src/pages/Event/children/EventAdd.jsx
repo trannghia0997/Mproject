@@ -1,9 +1,11 @@
-import { UploadOutlined } from "@ant-design/icons"
-import { Button, Form, Upload, DatePicker, Input } from "antd"
-import React, { useCallback, useRef } from "react"
+import {} from "@ant-design/icons"
+import { Form, DatePicker, Input, Image } from "antd"
+import React, { useCallback, useRef, useState } from "react"
 import { useNavigate } from "react-router-dom"
 import RichEditor from "../../../components/RichEditor"
 import { useForm } from "antd/es/form/Form"
+
+const { TextArea } = Input
 
 const EventAdd = () => {
     const navigate = useNavigate()
@@ -17,9 +19,11 @@ const EventAdd = () => {
     const handleSave = useCallback(async () => {
         const content = await richEditor.current.save()
         const data = await form.validateFields()
-        data.content = content
+        data.content = JSON.stringify(content)
         console.log(data)
     }, [form])
+
+    const [image, setImage] = useState(null)
 
     return (
         <div>
@@ -38,34 +42,60 @@ const EventAdd = () => {
                 <div className="flex justify-center">
                     <div className="justify-center flex flex-col w-4/5">
                         <Form form={form}>
-                            <Form.Item
-                                label="Title"
-                                name="name"
-                                className=" w-3/5"
-                            >
-                                <Input />
-                            </Form.Item>
+                            <div className="flex relative justify-center">
+                                <Image
+                                    alt="banner "
+                                    width="100%"
+                                    height="450px"
+                                    className="object-cover"
+                                    src={image ? image : "error"}
+                                    fallback="https://kmarket.ro/assets/images/no-image.svg"
+                                />
+                                <Form.Item
+                                    name="image"
+                                    className="absolute w-2/5 bottom-3"
+                                >
+                                    <Input
+                                        placeholder="Image Adress goes here..."
+                                        className="font-sans text-gray-500"
+                                        onChange={(event) =>
+                                            setImage(event.target.value)
+                                        }
+                                    />
+                                </Form.Item>
+                            </div>
 
-                            <Form.Item label="Time" name="time">
-                                <DatePicker />
-                            </Form.Item>
+                            <div className="flex flex-col p-10 bg-white ">
+                                <Form.Item name="time">
+                                    <DatePicker bordered={false} />
+                                </Form.Item>
 
-                            <Form.Item label="Banner" name="image">
-                                <Upload>
-                                    <Button icon={<UploadOutlined />}>
-                                        Click to Upload
-                                    </Button>
-                                </Upload>
-                            </Form.Item>
+                                <Form.Item name="title" className=" w-3/5">
+                                    <TextArea
+                                        placeholder="Title goes here..."
+                                        bordered={false}
+                                        className=" text-3xl font-semibold"
+                                        autoSize
+                                    />
+                                </Form.Item>
+                                <Form.Item name="article" className="">
+                                    <TextArea
+                                        placeholder="Article goes here..."
+                                        autoSize
+                                        bordered={false}
+                                    />
+                                </Form.Item>
 
-                            <Form.Item name="content">
-                                <div className="flex justify-center">
-                                    <div className="bg-white w-4/5 rounded-3xl p-10">
-                                        <RichEditor editorCore={richEditor} />
+                                <Form.Item name="content">
+                                    <div className="flex ">
+                                        <div className=" w-full p-0">
+                                            <RichEditor
+                                                editorCore={richEditor}
+                                            />
+                                        </div>
                                     </div>
-                                </div>
-                            </Form.Item>
-
+                                </Form.Item>
+                            </div>
                             <Form.Item>
                                 <div className="flex my-10 w-4/5 justify-end gap-10 mx-14">
                                     <button

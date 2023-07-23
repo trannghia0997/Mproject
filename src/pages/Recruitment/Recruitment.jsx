@@ -57,7 +57,7 @@ const Recruitment = () => {
                 </div>
                 <div className="grid grid-cols-2 gap-y-8 gap-x-4 ">
                     {recruits.map((recruit) => (
-                        <div className="flex w-full h-36 bg-white rounded-xl shadow-xl hover:scale-105 transition-all ease-in-out duration-200">
+                        <div className="flex w-full h-36 bg-white rounded-xl shadow-lg hover:-translate-y-2 hover:shadow-2xl transition-all ease-in-out duration-200">
                             <div className="flex justify-center w-2/5">
                         
                                 <div className="justify-center p-8 items-center bg-center bg-contain cursor-pointer">
