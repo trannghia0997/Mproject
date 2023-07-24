@@ -157,7 +157,7 @@ const RecruitAdd = () => {
                                     { label: "Male", value: "Male" },
                                     { label: "Female", value: "Female" },
                                     {
-                                        label: "Not require",
+                                        label: "Not required",
                                         value: "Not required",
                                     },
                                 ]}
