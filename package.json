@@ -17,6 +17,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-editor-js": "^2.1.0",
+    "react-highlight-words": "^0.20.0",
     "react-icons": "^4.10.1",
     "react-infinite-scroll": "^0.1.5",
     "react-infinite-scroll-component": "^6.1.0",

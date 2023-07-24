@@ -1,16 +1,16 @@
 [
     {
-        "key": 2001,
+        "key": "S1",
         "value": "Question1_QuestionSoftskill",
         "label": "Question1_QuestionSoftskill"
     },
     {
-        "key": 2002,
+        "key": "S2",
         "value": "Question2_QuestionSoftskill",
         "label": "Question2_QuestionSoftskill"
     },
     {
-        "key": 2003,
+        "key": "S3",
         "value": "Question3_QuestionSoftskill",
         "label": "Question3_QuestionSoftskill"
     }
