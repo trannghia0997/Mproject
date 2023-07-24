@@ -8,5 +8,6 @@
   "cv": {
     "languages": ["ReactJS", "PHP", "Java"],
     "experience": "2 years"
-  }
+  },
+  "cvurl" :"https://example.pdf"
 }
