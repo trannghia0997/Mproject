@@ -35,8 +35,8 @@ const RecruitAdd = () => {
     const [image, setImage] = useState(null)
 
     
-    const handleSave = async () => {
-        const data = await form.validateFields()
+    const handleSave =  () => {
+        const data =  form.validateFields()
         console.log(data)
     }
 
