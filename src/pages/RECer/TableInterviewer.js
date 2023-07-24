@@ -34,7 +34,7 @@ const TableInterviewer = () => {
     .slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
 
   return (
-    <div>
+    <div className='TableInterviewer-home'>
       <h1>Quản lý người phỏng vấn</h1>
       <div className='wrapper'>
         {currentTableData.map((item) => (

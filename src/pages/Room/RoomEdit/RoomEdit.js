@@ -32,35 +32,22 @@ const RoomEdit = () => {
         }
     };
 
-    const handleImageChange = (event) => {
-        const file = event.target.files[0];
-        const reader = new FileReader();
-
-        reader.onloadend = () => {
-            setImagePreview(reader.result);
-        };
-
-        if (file) {
-            reader.readAsDataURL(file);
-        }
-    };
+  
 
     return (
         <div className='RoomDetail-home'>
-            <div className='top-main'>
-                <h1>Hello Devs</h1>
-            </div>
-            <div className='container-company'>
 
+            <div className='container-company'>
+                <Link to={`/room/${info.RoomId}/candidate`}>
+                    <button className='AddButton'>Thêm ứng viên vào phòng họp</button>
+                </Link>
                 <div className='company-item' key={info.id}>
                     <div className='company-item-top'>
                         <img className='logo' src='https://lezebre.lu/images/detailed/17/30476-Perodua-Myvi.png' />
                         <h3>{info.RoomName}</h3>
                         <p>{info.RoomSkill}</p>
                         <button className='status'>{info.Status}</button>
-                        <Link to={`/room/${info.RoomId}/candidate`}>
-                            <button className='AddButton'>Thêm ứng viên vào phòng họp</button>
-                        </Link>
+
                     </div>
                     <div className='company-item-mid'>
                         <p>{info.RoomDescription}</p>
@@ -81,21 +68,6 @@ const RoomEdit = () => {
                 <div className='info-container'>
                     <h2>Thông tin cơ bản</h2>
                     <div className='form-edit'>
-                        <div className='info-item' style={{ marginTop: '15px' }}>
-                            <span style={{ marginRight: '10px' }}>Logo phòng họp</span>
-                            <div style={{ display: 'flex', alignItems: 'center' }}>
-                                {imagePreview && (
-                                    <img
-                                        src={imagePreview}
-                                        alt="Preview"
-                                        style={{ width: '60px', height: '60px', borderRadius: '50%', marginRight: '10px' }}
-                                    />
-                                )}
-                                <label className='custom-file-upload'>
-                                    <input type="file" className='info' onChange={handleImageChange} />
-                                </label>
-                            </div>
-                        </div>
                         <div className='info-item'>
                             <span>Tên phòng họp</span>
                             <input className='info' value={info.RoomName} />

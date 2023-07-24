@@ -44,7 +44,7 @@ const Room = () => {
                                 <h4>{item.EndDate}</h4>
                                 <p>Ngày kết thúc</p>
                             </button>
-                            <div style={{ display: 'flex', justifyContent: 'center', marginLeft: '400px' }} className='adjustButton'>
+                            <div style={{ display: 'flex', justifyContent: 'center', marginLeft: '50vh' }} className='adjustButton'>
 
                                 <Link to={`/room/${item.RoomId}/detail`} ><Button shape="circle" className='DetailButton' icon={<EyeOutlined />}>
                                 </Button></Link>
